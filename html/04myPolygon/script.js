@@ -13,7 +13,7 @@ canvas.height = height;
 let background = new GraphBackGround();
 
 for(let i=0; i<numberOfPoints; i++){
-    let point = new Point(Math.random()*width,Math.random()*height,15,"red",true);
+    let point = new Point(Math.random()*width,Math.random()*height,15,getRandomColor(),true);
     points.push(point);
 }
 
@@ -36,4 +36,12 @@ function animate(){
     context.closePath();
     context.stroke();
     context.fill();
+}
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
